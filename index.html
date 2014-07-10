@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="prudentInsurance">
 <head>
 <meta charset="UTF-8">
 <title>Prudent Insurance Brokerage Inc.</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<link href="../custom.css" rel="stylesheet">
 <!-- NAVBAR
 ================================================== -->
   <body>
@@ -30,24 +29,15 @@
     </div>
 	
 	<div class="container">
-	<ol class="breadcrumb ">
+	<ol class="breadcrumb">
 	  <li><a href="#auto">Auto . Motorcycle . Boat</a></li>
 	  <li><a href="#home">Home</a></li>
 	  <li><a href="#commercial">Commerical</a></li>
 	</ol>
 	</div>
    
-   <div class="container">
-	<div class="jumbotron">
-		<h1>Prudent Insurance Brokerage Inc.</h1>
-		<p>Our office is conveniently located in the heart of Flushing, NY on main street.  
-		We partner with some of the most experienced insurance brokerage firms to bring you the most competitive insurance rates 
-		and experiences to obtain sufficient coverages to get you and your businesses covered for the unpredictable losses.
-		</p>
-		<p class="align-center">Contact our office <a href="tel:718-445-9898">Tel: 718-445-9898</a>/
-		<a href="mailto:info@prudentbrokerage.com" target="_top">email:info@prudentbrokerage.com</a></p>
-	</div>
-	</div>
+  <div ng-view=""></div>
+
 
     <div class="container">
 
@@ -94,7 +84,13 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/docs.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.js"></script>
+
+    <!-- Custom -->
+    <script src="controllers/customInsurance.js"></script>
   </body>
 </html>
