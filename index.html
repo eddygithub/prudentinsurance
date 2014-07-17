@@ -20,9 +20,9 @@
             </div>
             <div>
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="about">About</a></li>
+                <li><a ui-sref="contact">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -38,8 +38,7 @@
 	</ol>
 	</div>
    
-  <div ng-view=""></div>
-
+  <div ui-view></div>
 
     <div class="container">
 
@@ -48,21 +47,27 @@
         <div class="col-md-4">
           <img class="img-square" src="images/auto.jpg" alt="Auto Insurance" style="width: 250px; height: 180px;">
           <h2>Auto . Motorcycle . Boat</h2>
+          <div ng-show="displayAutoDetail">
           <p>Operating an automobile is a privilege that comes with responsibilities.  Car accidents can result in 
 			  essential financial losses.  Contact our office <a hre="tel:17184459898">1-718-445-9898</a> to find a policy best fit your needs.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+          <p><a class="btn btn-default" href="#" role="button" ng-click="displayAutoDetail=!displayAutoDetail">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-square" src="images/house.jpg" alt="Homeowners Insurance" style="width: 250px; height: 180px;">
           <h2>Home</h2>
+          <div ng-show="displayHomeDetail">
           <p>Does your homeowners policy cover for natural disasters that are likely to occur in your area?  Are you living in flood zone without flood insurance?</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <p><a class="btn btn-default" href="#" role="button" ng-click="displayHomeDetail=!displayHomeDetail">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-square" src="images/commercial.jpg" alt="Commercial Insurance" style="width: 250px; height: 180px;">
           <h2>Commercial</h2>
+          <div ng-show="displayBizDetail">
           <p>Doing business?  Do you have liability and worker's compensation insurance?</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <p><a class="btn btn-default" href="#" role="button" ng-click="displayBizDetail=!displayBizDetail">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -79,6 +84,19 @@
         <p>&copy; 2014 Prudent Insurance Brokerage, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
+      <div modal="showModal" close="cancel()">
+        <div class="modal-header">
+            <h4>Privacy</h4>
+        </div>
+        <div class="modal-body">
+            <p>Example paragraph with some text.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-success" ng-click="ok()">Okay</button>
+          <button class="btn" ng-click="cancel()">Cancel</button>
+        </div>
+      </div>
+
     </div><!-- /.container -->
 
 
@@ -91,6 +109,8 @@
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-route.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
 
     <!-- Custom -->
     <script src="controllers/customInsurance.js"></script>
